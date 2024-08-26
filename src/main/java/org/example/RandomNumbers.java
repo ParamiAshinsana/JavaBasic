@@ -7,7 +7,7 @@ public class RandomNumbers {
     public static void main(String[] args) {
 
 //        method01();
-        method02();
+        guessTheNumber();
     }
 
     private static void method01() {
@@ -17,17 +17,31 @@ public class RandomNumbers {
 
     }
 
-    private static void method02() {
-        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-        System.out.print("Enter username :");
+    private static void guessTheNumber() {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
 
-        String userName = myObj.nextLine();  // Read user input
-        System.out.println("Username is: " + userName);
+        int randomNumber = random.nextInt(10) + 1;
+        int attempts = 3;
 
-        for (int i = 0; i < 3; i++) {
-            System.out.print("your name : ");
-            String firstName = myObj.nextLine();
-            System.out.println("name "+""+i+":"+firstName);
+        System.out.println("Guess the number (1 to 10)! You have " + attempts + " tries.");
+
+        for (int i = 1; i <= attempts; i++) {
+            System.out.print("Try " + i + ": ");
+            int guess = scanner.nextInt();
+
+            if (guess == randomNumber) {
+                System.out.println("Wow! You guessed it right!");
+                break;
+            } else if (i == attempts) {
+                System.out.println("Oops! Out of tries. The number was " + randomNumber + ".");
+            } else {
+                System.out.println("Nope, try again!");
+
+            }
+
         }
+
+        scanner.close();
     }
 }
