@@ -8,7 +8,7 @@ public class Test {
         System.out.print("Input Your Number : ");
         double number = scanner.nextDouble();
 
-        double inch = number*25.4;
-        System.out.println(inch+" inch");
+        double inch = number/25.4;
+        System.out.println(inch+" mm");
     }
 }
