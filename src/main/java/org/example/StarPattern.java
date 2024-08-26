@@ -12,10 +12,10 @@ public class StarPattern {
 //            System.out.println(" ");
 //        }
 
-        method1();
+        method02();
     }
 
-    public static void method1(){
+    public static void method01(){
         for (int i = 0; i <= 10; i++){
             for (int j =0; j <=10 -i-1; j++){
                 System.out.print(" ");
@@ -38,5 +38,20 @@ public class StarPattern {
         }
 
     }
+
+    public static void method02(){
+        for (int i = 0; i <= 10; i++){              //<----- 1 st for loop
+            for (int j =0; j <=10-i; j++){           //<----- 2nd for loop
+                System.out.print(" ");
+            }
+            for(int j=0;j<=i;j++){             //<----- 3 rd for loop
+                System.out.print("* ");
+            }
+
+            System.out.println();
+        }
+
+    }
+
 
 }
